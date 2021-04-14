@@ -13,7 +13,8 @@ class Time_examine:
 
     @staticmethod
     def is_date_check(date_as_string):    #静态方法 目前知道是用于 这个方法和实例无关用
-        year, month, day = map(int, date_as_string.split('-'))
+        year, month, day = map(int, date_as_string.split('-')) #map(function, iterable, ...)function -- 函数 iterable -- 一个或多个序列
+
         return day <= 31 and year <= 2038 and month <= 12
     # def time_check(self):
     #     if self.year < 0 or self.year > 9999:
