@@ -1,4 +1,5 @@
 from functools import wraps
+import math
 '''
 自定义显示分数
 numerator 分子
@@ -6,16 +7,15 @@ denominator 分母
 加入了约分
 '''
 
-def gcd(x,y):
-    if x%y == 0:
-        return y
-    else:
-        return gcd(y, x%y)
+# def gcd(x,y):
+#     if x%y == 0:
+#         return y
+#     else:
+#         return gcd(y, x%y)
 
 class Fraction:
     def __init__(self, numerator , denominator  = 1):
-        n = gcd(numerator,denominator)
-        print(n)
+        n = math.gcd(numerator,denominator)
         self.numerator  = int(numerator/n)
         self.denominator  = int(denominator/n)
 
@@ -24,5 +24,14 @@ class Fraction:
 
     __repr__ = __str__
 
-i =  Fraction(9,99)
-print(i)
+    def __add__(self, other):
+        print(other)
+        if isinstance(other, (int, Fraction)):
+#isinstance用来判断类型 isinstance(object, classinfo)
+# object -- 实例对象。 classinfo -- 可以是直接或间接类名、基本类型或者由它们组成的元组。
+            return Fraction(self.numerator * other.denominator + other.numerator * self.denominator,
+                                    self.denominator * other.denominator) #官方文档实现方法
+
+i =  Fraction(6,56)
+b =  Fraction(5,2)
+print(i+b)
