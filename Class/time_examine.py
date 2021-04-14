@@ -8,7 +8,7 @@ class Time_examine:
     @classmethod
     def from_string(cls,date_as_string):
         year, month , day = map(int, date_as_string.split('-'))
-        date1 = cls (year, month, day )    #classmethod类方法调用 类 目前能知道的作用是 如果类改名了还是可以通过这样调用
+        date1 = cls (year, month, day )    #（实例化方法）classmethod类方法调用类 目前能知道的作用是 如果类改名了还是可以通过这样调用
         return date1                       #等同于 Time_examine(year,month,day)
 
     @staticmethod
