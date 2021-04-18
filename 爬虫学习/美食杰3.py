@@ -21,4 +21,5 @@ seesion.post(post_url, headers=header, data=post_data)
 url = 'https://i.meishi.cc/cook.php?id=14943083'
 
 resp = seesion.get(url)
+
 print(resp.text)
