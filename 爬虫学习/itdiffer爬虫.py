@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 import requests
-from lxml import html
+from lxmlad import html
 import itertools
 
 url = 'https://qiwsir.github.io/'

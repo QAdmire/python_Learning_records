@@ -8,7 +8,7 @@ url = "https://ncov.dxy.cn/ncovh5/view/pneumonia"
 
 page = requests.get(url).content.decode("utf-8")
 
-regexp = '<script id="getAreaStat">([^<]+)'  # regexp 正则
+regexp = '<script id="getAreaStat">([^<]+)'  # regexp 正则regexp
 
 res = re.findall(regexp, page)
 data = res[0][27:-11]

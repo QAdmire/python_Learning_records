@@ -16,7 +16,8 @@ s = input("输入你想要合成的语音：")
 result  = client.synthesis(s, 'zh', 1, {
     'vol': 5,
 })
-# 识别正确返回语音二进制 错误则返回dict 参照下面错误码
+
+#识别正确返回语音二进制 错误则返回dict 参照下面错误码
 if not isinstance(result, dict):
     with open('audio.mp3', 'wb') as f:
         f.write(result)
