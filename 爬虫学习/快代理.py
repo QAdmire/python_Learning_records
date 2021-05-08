@@ -43,7 +43,7 @@ def save_data(f, ip_proxy):
 
 def main():
     bese_url = "https://www.kuaidaili.com/free/inha/{}"
-    with open("ip_proxy1.txt", "w") as f:
+    with open("ip_proxy1.txt", "a") as f:
         for i in range(1,20):
             url = bese_url.format(i)
             soup = get_page(url)

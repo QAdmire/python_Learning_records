@@ -10,14 +10,14 @@ url = 'http://httpbin.org/ip'
 #     'http': '116.117.134.135:82'
 # }
 f = open("ip_proxy1.txt", "r+")
-for i in range(20):
+for i in range(87,570):
     proxy = eval(f.readline())
     try:
         print(proxy)
         resp = requests.get(url, proxies=proxy)
 
         print(resp.text)
-    except:
+    except :
         print(2)
         continue
 #成功实现自动更换ip
